@@ -1,0 +1,10 @@
+[
+    {
+        "name": "imc",
+         "redirectTo": "./imc"
+    },
+    {
+        "name": "pesoideal",
+         "redirectTo": "./pesoideal"
+    }
+]
