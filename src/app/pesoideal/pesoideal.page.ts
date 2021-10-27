@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PesoidealPage implements OnInit {
 
+  gender: string;
+  height: number;
+  weightValue: number;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  calculateIdealWeight() {
+    if (this.gender == "Mujer"){
+      let finalIdealWeight = (50 + 0.6) * (this.height - 150)
+      this.weightValue = parseFloat(finalIdealWeight.toFixed(2));
+     } else if (this.gender == "Hombre"){
+      let finalIdealWeight = (50 + 0.75) * (this.height - 150)
+      this.weightValue = parseFloat(finalIdealWeight.toFixed(2));
+     }
   }
 
 }

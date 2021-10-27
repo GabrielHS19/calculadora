@@ -6,18 +6,24 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item (click)="goToIMC()">Índice de masa corporal (IMC) </ion-item>
-      <ion-item (click)="goToPeso()">Peso ideal</ion-item>
-      <ion-item>Harris-benedict gasto energético basal (GEB)</ion-item>
-      <ion-item>Fórmula de Miffin-St.Jeor tasa metabólica basal (TMB)</ion-item>
-      <ion-item>Factor de Actividad Física (FAF)</ion-item>
-      <ion-item>Efecto térmico de los alimentos (ETA)</ion-item>
-      <ion-item>Valor Energético Total (VET)</ion-item>
-      <ion-item>Distribución dietética </ion-item>
-      <ion-item>IMC pre-gestacional</ion-item>
-      <ion-item>Gasto energético basal (GEB) </ion-item>
-    
-    
+      <ion-menu-toggle>
+        <ion-item (click)="goToIMC()">Índice de masa corporal (IMC) </ion-item>
+        <ion-item (click)="goToPeso()">Peso ideal</ion-item>
+        <ion-item>Harris-benedict gasto energético basal (GEB)</ion-item>
+        <ion-item>Fórmula de Miffin-St.Jeor tasa metabólica basal (TMB)</ion-item>
+        <ion-item>Factor de Actividad Física (FAF)</ion-item>
+        <ion-item>Efecto térmico de los alimentos (ETA)</ion-item>
+        <ion-item>Valor Energético Total (VET)</ion-item>
+        <ion-item>Distribución dietética </ion-item>
+        <ion-item>IMC pre-gestacional</ion-item>
+        <ion-item>Gasto energético basal (GEB) </ion-item>
+        <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirecTo">
+          <ion-label>{{c.name}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      
 
     </ion-list>
   </ion-content>

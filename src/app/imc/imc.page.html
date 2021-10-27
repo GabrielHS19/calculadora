@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Imc</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Calculadora IMC</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
-calcular el imc
-</ion-content>
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Peso (kg)</ion-label>
+        <ion-input type="number" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Altura (cm)</ion-label>
+        <ion-input type="number" [(ngModel)]="height"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <section>
+      <ion-button expand="block" (click)="calculateBMI()">Calcular</ion-button>
+    </section>
+
+    <ion-card *ngIf="bmiValue">
+      <ion-card-header>
+        Cálculo de IMC
+      </ion-card-header>
+      <ion-card-content>
+        <p>Persona: Peso {{this.weight}} kg, Altura {{this.height}} cm</p>
+        <p>IMC: {{bmiValue}}</p>
+        <p><strong>Usted está {{bmiMessage}}</strong></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</body>

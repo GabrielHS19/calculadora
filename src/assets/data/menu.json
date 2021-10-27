@@ -1,10 +1,10 @@
 [
     {
-        "name": "imc",
-         "redirectTo": "./imc"
+        "name": "Índice de masa corporal (IMC)",
+         "redirectTo": "/imc"
     },
     {
-        "name": "pesoideal",
-         "redirectTo": "./pesoideal"
+        "name": "Peso ideal",
+         "redirectTo": "/pesoideal"
     }
 ]

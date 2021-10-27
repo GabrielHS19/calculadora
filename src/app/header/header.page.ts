@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Componente } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,8 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./header.page.scss'],
 })
 export class HeaderPage implements OnInit {
+
+  componentes: Componente[] = [];
 
   constructor(private menuCtrl: MenuController) { }
 

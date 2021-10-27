@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Peso ideal</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Calculadora Peso ideal</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
-calcular peso ideal
-</ion-content>
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select [(ngModel)]="gender" placeholder="Seleccionar">
+          <ion-select-option value="Mujer">Mujer</ion-select-option>
+          <ion-select-option value="Hombre">Hombre</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Altura (cm)</ion-label>
+        <ion-input type="number" [(ngModel)]="height"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <section>
+      <ion-button expand="block" (click)="calculateIdealWeight()">Calcular</ion-button>
+    </section>
+
+    <ion-card *ngIf="weightValue">
+      <ion-card-header>
+        Cálculo de Peso Ideal
+      </ion-card-header>
+      <ion-card-content>
+        <p>Persona: Género {{this.gender}} , Altura {{this.height}} cm</p>
+        <p>Su peso ideal es: {{weightValue}}</p>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</body>
