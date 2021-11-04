@@ -15,6 +15,22 @@ const routes: Routes = [
   {
     path: 'peso',
     loadChildren: () => import('../pesoideal/pesoideal.page').then( m => m.PesoidealPage)
+  },
+  {
+    path: 'geb',
+    loadChildren: () => import('../geb/geb.page').then( m => m.GebPage)
+  },
+  {
+    path: 'tmb',
+    loadChildren: () => import('../tmb/tmb.page').then( m => m.TmbPage)
+  },
+  {
+    path: 'faf',
+    loadChildren: () => import('../faf/faf.page').then( m => m.FafPage)
+  },
+  {
+    path: 'eta',
+    loadChildren: () => import('../eta/eta.page').then( m => m.EtaPage)
   }
 ];
 

@@ -18,12 +18,13 @@ export class PesoidealPage implements OnInit {
 
   calculateIdealWeight() {
     if (this.gender == "Mujer"){
-      let finalIdealWeight = (50 + 0.6) * (this.height - 150)
+      let finalIdealWeight = 50 + (.6 * (this.height - 150))
       this.weightValue = parseFloat(finalIdealWeight.toFixed(2));
      } else if (this.gender == "Hombre"){
-      let finalIdealWeight = (50 + 0.75) * (this.height - 150)
+      let finalIdealWeight = 50 + (.75 * (this.height - 150))
       this.weightValue = parseFloat(finalIdealWeight.toFixed(2));
      }
+  
   }
 
 }

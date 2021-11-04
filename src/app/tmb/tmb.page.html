@@ -1,0 +1,54 @@
+<body>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Calculadora Miffin-St.Jeor tasa metabólica basal  </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select [(ngModel)]="genero" placeholder="Seleccionar">
+          <ion-select-option value="Mujer">Mujer</ion-select-option>
+          <ion-select-option value="Hombre">Hombre</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Altura (cm)</ion-label>
+        <ion-input type="number" [(ngModel)]="altura"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Peso (kg)</ion-label>
+        <ion-input type="number" [(ngModel)]="peso"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Edad </ion-label>
+        <ion-input type="number" [(ngModel)]="edad"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <section>
+      <ion-button expand="block" (click)="calcularTMB()">Calcular</ion-button>
+    </section>
+
+    <ion-card *ngIf="tmb">
+      <ion-card-header>
+        Cálculo de Miffin-St.Jeor tasa metabólica basal (TMB)
+      </ion-card-header>
+      <ion-card-content>
+        <p> Género {{this.genero}} , Altura {{this.altura}} cm, Peso {{this.peso}} kg, Edad {{this.edad}} años</p>
+        <p>El resultado es: {{tmb}}</p>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</body>
+

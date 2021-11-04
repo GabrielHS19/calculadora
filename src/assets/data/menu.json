@@ -6,5 +6,13 @@
     {
         "name": "Peso ideal",
          "redirectTo": "/pesoideal"
+    },
+    {
+        "name": "Harris-benedict gasto energético basal ",
+         "redirectTo": "/geb"
+    },
+    {
+        "name": "Fórmula de Miffin-St.Jeor tasa metabólica basal  ",
+         "redirectTo": "/tmb"
     }
 ]

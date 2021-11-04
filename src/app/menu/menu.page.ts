@@ -23,6 +23,16 @@ export class MenuPage implements OnInit {
   goToPeso(){
     this.router.navigate(['./pesoideal']);
   }
-
-
+  goToGEB(){
+    this.router.navigate(['./geb']);
+  }
+  goToTMB(){
+    this.router.navigate(['./tmb']);
+  }
+  goToFAF(){
+    this.router.navigate(['./faf']);
+  }
+  goToETA(){
+    this.router.navigate(['./eta']);
+  }
 }

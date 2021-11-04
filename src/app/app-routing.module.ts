@@ -27,6 +27,22 @@ const routes: Routes = [
     path: 'pesoideal',
     loadChildren: () => import('./pesoideal/pesoideal.module').then( m => m.PesoidealPageModule)
   },
+  {
+    path: 'geb',
+    loadChildren: () => import('./geb/geb.module').then( m => m.GebPageModule)
+  },
+  {
+    path: 'tmb',
+    loadChildren: () => import('./tmb/tmb.module').then( m => m.TmbPageModule)
+  },
+  {
+    path: 'faf',
+    loadChildren: () => import('./faf/faf.module').then( m => m.FafPageModule)
+  },
+  {
+    path: 'eta',
+    loadChildren: () => import('./eta/eta.module').then( m => m.EtaPageModule)
+  },
 ];
 
 @NgModule({
