@@ -35,4 +35,16 @@ export class MenuPage implements OnInit {
   goToETA(){
     this.router.navigate(['./eta']);
   }
+  goToVET(){
+    this.router.navigate(['./vet']);
+  }
+  goToDIS(){
+    this.router.navigate(['./distridiabe']);
+  }
+  goToIMCPRE(){
+    this.router.navigate(['./imcpre']);
+  }
+  goToGEBN(){
+    this.router.navigate(['./gebn']);
+  }
 }

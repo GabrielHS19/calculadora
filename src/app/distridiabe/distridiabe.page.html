@@ -1,0 +1,87 @@
+<body>
+  <ion-header >
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Distribución dietética </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  Hidratos de carbono: 50-65%
+  Proteínas: 10-15%
+  Lípidos: 25%
+  
+  <ion-content padding >
+    <ion-list>
+      <ion-item>
+        <ion-label floating>V.E.T.</ion-label>
+        <ion-input type="number" [(ngModel)]="vet"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        
+        <ion-label floating>% de HCO</ion-label>
+        <ion-input type="number" [(ngModel)]="phco"></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        
+        <ion-label floating>% de PRO </ion-label>
+        <ion-input type="number" [(ngModel)]="ppro"></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        
+        <ion-label floating>% de LIP </ion-label>
+        <ion-input type="number" [(ngModel)]="plip"></ion-input>
+
+      </ion-item>
+     
+      <section>
+        <ion-button expand="block" (click)="calculo()">Calcular</ion-button>
+      </section>
+
+     
+    </ion-list>
+
+    <ion-card *ngIf="khco">
+      <ion-card-header>
+         HCO
+      </ion-card-header>
+      <ion-card-content>
+        <p>Kcal: {{khco}}</p>
+        <p>Gramos: {{ghco}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="kpro">
+      <ion-card-header>
+         PRO
+      </ion-card-header>
+      <ion-card-content>
+        <p>Kcal: {{kpro}}</p>
+        <p>Gramos: {{gpro}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="klip">
+      <ion-card-header>
+         LIP
+      </ion-card-header>
+      <ion-card-content>
+        <p>Kcal: {{klip}}</p>
+        <p>Gramos: {{glip}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="totalk">
+      <ion-card-content>
+        <p>El total de KCAL es de:  {{totalk}}</p>
+        <p>El total de Gramos es de:  {{totalg}}</p>
+      </ion-card-content>
+    </ion-card>
+  
+</ion-content>
+</body>

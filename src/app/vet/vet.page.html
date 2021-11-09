@@ -1,0 +1,38 @@
+<body>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title> Valor Energético Total </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>E.T.A.</ion-label>
+        <ion-input type="number" [(ngModel)]="eta"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>F.A.F.</ion-label>
+        <ion-input type="number" [(ngModel)]="faf"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <section>
+      <ion-button expand="block" (click)="calculateVET()">Calcular</ion-button>
+    </section>
+
+    <ion-card *ngIf="vet">
+      <ion-card-header>
+        Cálculo de Valor Energético Total
+      </ion-card-header>
+      <ion-card-content>
+        <p>El resultado es: {{vet}}</p>
+       
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</body>

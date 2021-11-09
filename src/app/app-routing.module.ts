@@ -43,6 +43,22 @@ const routes: Routes = [
     path: 'eta',
     loadChildren: () => import('./eta/eta.module').then( m => m.EtaPageModule)
   },
+  {
+    path: 'vet',
+    loadChildren: () => import('./vet/vet.module').then( m => m.VetPageModule)
+  },
+  {
+    path: 'distridiabe',
+    loadChildren: () => import('./distridiabe/distridiabe.module').then( m => m.DistridiabePageModule)
+  },
+  {
+    path: 'imcpre',
+    loadChildren: () => import('./imcpre/imcpre.module').then( m => m.ImcprePageModule)
+  },
+  {
+    path: 'gebn',
+    loadChildren: () => import('./gebn/gebn.module').then( m => m.GebnPageModule)
+  },
 ];
 
 @NgModule({

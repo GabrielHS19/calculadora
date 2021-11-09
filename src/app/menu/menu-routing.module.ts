@@ -31,6 +31,22 @@ const routes: Routes = [
   {
     path: 'eta',
     loadChildren: () => import('../eta/eta.page').then( m => m.EtaPage)
+  },
+  {
+    path: 'vet',
+    loadChildren: () => import('../vet/vet.page').then( m => m.VetPage)
+  },
+  {
+    path: 'distridiabe',
+    loadChildren: () => import('../distridiabe/distridiabe.page').then( m => m.DistridiabePage)
+  },
+  {
+    path: 'imcpre',
+    loadChildren: () => import('../imcpre/imcpre.page').then( m => m.ImcprePage)
+  },
+  {
+    path: 'gebn',
+    loadChildren: () => import('../gebn/gebn.page').then( m => m.GebnPage)
   }
 ];
 

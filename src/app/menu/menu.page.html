@@ -13,10 +13,10 @@
         <ion-item (click)="goToTMB()">Fórmula de Miffin-St.Jeor tasa metabólica basal (TMB)</ion-item>
         <ion-item (click)="goToFAF()">Factor de Actividad Física (FAF)</ion-item>
         <ion-item (click)="goToETA()">Efecto térmico de los alimentos (ETA)</ion-item>
-        <ion-item>Valor Energético Total (VET)</ion-item>
-        <ion-item>Distribución dietética </ion-item>
-        <ion-item>IMC pre-gestacional</ion-item>
-        <ion-item>Gasto energético basal (GEB) </ion-item>
+        <ion-item (click)="goToVET()">Valor Energético Total (VET)</ion-item>
+        <ion-item (click)="goToDIS()">Distribución dietética </ion-item>
+        <ion-item (click)="goToIMCPRE()">IMC pre-gestacional</ion-item>
+        <ion-item (click)="goToGEBN()">Gasto energético basal (GEB) </ion-item>
         <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirecTo">
           <ion-label>{{c.name}}</ion-label>
         </ion-item>
