@@ -36,17 +36,17 @@ this.items = Array();
 
 
   calculo(){
-let khco = this.vet * this.phco;
+let khco = (this.vet * this.phco)/100;
 this.khco = parseFloat(khco.toFixed(2));
 let ghco = this.khco / 4;
 this.ghco =parseFloat(ghco.toFixed(2));
  
-let kpro = this.vet * this.ppro;
+let kpro = (this.vet * this.ppro)/100;
 this.kpro = parseFloat(kpro.toFixed(2));
 let gpro = this.kpro / 4;
 this.gpro =parseFloat(gpro.toFixed(2));
 
-let klip = this.vet * this.plip;
+let klip = (this.vet * this.plip)/100;
 this.klip = parseFloat(klip.toFixed(2));
 let glip = this.klip / 4;
 this.glip =parseFloat(glip.toFixed(2));
