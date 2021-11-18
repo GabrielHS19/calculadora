@@ -9,28 +9,31 @@
   </ion-header>
 
   <ion-content padding>
+    <center>
     <ion-list>
       <ion-item>
-        <ion-label floating>E.T.A.</ion-label>
+        <ion-label floating>E.T.A : </ion-label>
         <ion-input type="number" [(ngModel)]="eta"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>F.A.F.</ion-label>
+        <ion-label floating>F.A.F : </ion-label>
         <ion-input type="number" [(ngModel)]="faf"></ion-input>
       </ion-item>
     </ion-list>
-
+  </center>
     <section>
-      <ion-button expand="block" (click)="calculateVET()">Calcular</ion-button>
+      <ion-button  (click)="calculateVET()">Calcular</ion-button>
     </section>
 
     <ion-card *ngIf="vet">
       <ion-card-header>
-        Cálculo de Valor Energético Total
+        Cálculo de Valor Energético Total (VET)
       </ion-card-header>
       <ion-card-content>
-        <p>El resultado es: {{vet}}</p>
+        <p>E.T.A : {{this.eta}}</p>
+        <p>F.A.F : {{this.faf}}</p>
+        <p>El resultado es: {{vet}} Kcal</p>
        
       </ion-card-content>
     </ion-card>

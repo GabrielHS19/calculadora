@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-imc',
   templateUrl: './imc.page.html',
@@ -13,7 +12,7 @@ export class ImcPage implements OnInit {
   bmiValue: number;
   bmiMessage: string;
 
-  constructor() { }
+  constructor(public alertCtrl: AlertController) { }
 
   ngOnInit() {
   }
@@ -23,8 +22,26 @@ export class ImcPage implements OnInit {
       let finalBmi = this.weight / (this.height / 100 * this.height / 100);
       this.bmiValue = parseFloat(finalBmi.toFixed(2));
       this.setBMIMessage();
+    }else{
+      this.showAlert();
     }
   }
+
+
+  async showAlert() { 
+    const alert = await this.alertCtrl.create({ 
+    header: 'Error', 
+    message: 'Ingrese datos correctos', 
+    buttons: ['OK'] 
+    }); 
+    await alert.present(); 
+    const result = await alert.onDidDismiss();  
+    console.log(result); 
+    } 
+
+
+
+
 
    setBMIMessage() {
     if (this.bmiValue < 18.5) {
@@ -43,5 +60,7 @@ export class ImcPage implements OnInit {
       this.bmiMessage = "Obeso"
     }
   }
+
+
 
 }

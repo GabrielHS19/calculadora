@@ -8,25 +8,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content >
+    <center>
     <ion-list>
       <ion-item>
-        <ion-label floating>GEB</ion-label>
+        <ion-label floating>GEB : </ion-label>
         <ion-input type="number" [(ngModel)]="geb"></ion-input>
+    
       </ion-item>
     </ion-list>
-
+  </center>
     <section>
-      <ion-button expand="block" (click)="calcularETA()">Calcular</ion-button>
+      <ion-button (click)="calcularETA()">Calcular</ion-button>
     </section>
 
     <ion-card *ngIf="eta">
       <ion-card-header>
-        Calculo de Efecto térmico de los alimentos
+        Calculo de Efecto térmico de los alimentos (ETA)
       </ion-card-header>
       <ion-card-content>
         <p> GEB: {{this.geb}} </p>
-        <p>El resultado es: {{eta}}</p>
+        <p>El resultado es: {{eta}} Kcal</p>
       </ion-card-content>
     </ion-card>
 

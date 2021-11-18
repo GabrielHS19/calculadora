@@ -8,7 +8,11 @@
     </ion-toolbar>
   </ion-header>
 
+
+
   <ion-content padding>
+    
+    <center>
     <ion-list>
       <ion-item>
         <ion-label>Género</ion-label>
@@ -19,24 +23,25 @@
       </ion-item>
       
       <ion-item>
-        <ion-label floating>Altura (cm)</ion-label>
+        <ion-label floating>Altura (cm) : </ion-label>
         <ion-input type="number" [(ngModel)]="height"></ion-input>
       </ion-item>
     </ion-list>
+  </center>
 
-    <section>
-      <ion-button expand="block" (click)="calculateIdealWeight()">Calcular</ion-button>
-    </section>
+<ion-button  color="secondary"(click)="calculateIdealWeight()">Calcular</ion-button>
 
     <ion-card *ngIf="weightValue">
       <ion-card-header>
         Cálculo de Peso Ideal
       </ion-card-header>
       <ion-card-content>
-        <p> Genero: {{this.gender}} , Altura: {{this.height}} cm</p>
+        <p> Genero: {{this.gender}} | Altura: {{this.height}} cm</p>
         <p>Su peso ideal es: {{weightValue}} Kg</p>
       </ion-card-content>
     </ion-card>
 
   </ion-content>
+
+
 </body>

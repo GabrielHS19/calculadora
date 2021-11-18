@@ -7,47 +7,55 @@
       <ion-title>Distribución dietética </ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
+ 
   <ion-content padding >
+   
     <p>
-      Hidratos de carbono: 50-65% <br>
-      Proteínas: 10-15%<br>
+      Hidratos de carbono: 50-65% <br><br>
+      Proteínas: 10-15%<br><br>
       Lípidos: 25%
     </p>
+    <center>
     <ion-list>
       <ion-item>
-        <ion-label floating>V.E.T.</ion-label>
+        <ion-label floating>V.E.T : </ion-label>
         <ion-input type="number" [(ngModel)]="vet"></ion-input>
       </ion-item>
 
       <ion-item>
         
-        <ion-label floating>% de HCO</ion-label>
+        <ion-label floating>% de HCO : </ion-label>
         <ion-input type="number" [(ngModel)]="phco"></ion-input>
 
       </ion-item>
 
       <ion-item>
         
-        <ion-label floating>% de PRO </ion-label>
+        <ion-label floating>% de PRO : </ion-label>
         <ion-input type="number" [(ngModel)]="ppro"></ion-input>
 
       </ion-item>
 
       <ion-item>
         
-        <ion-label floating>% de LIP </ion-label>
+        <ion-label floating>% de LIP : </ion-label>
         <ion-input type="number" [(ngModel)]="plip"></ion-input>
 
       </ion-item>
-     
-      <section>
-        <ion-button expand="block" (click)="calculo()">Calcular</ion-button>
-      </section>
-
-     
+      
     </ion-list>
-
+  </center>
+   <br>
+   <br>
+   <br>
+      <ion-button color="secondary" (click)="calculo()">Calcular</ion-button>
+  
+    <ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
     <ion-card *ngIf="khco">
       <ion-card-header>
          HCO
@@ -80,10 +88,15 @@
 
     <ion-card *ngIf="totalk">
       <ion-card-content>
-        <p>El total de KCAL es de:  {{totalk}}</p>
-        <p>El total de Gramos es de:  {{totalg}}</p>
+        <p>El total de KCAL es de:  {{totalk}} kcal</p>
+        <p>El total de Gramos es de:  {{totalg}} gr</p>
       </ion-card-content>
     </ion-card>
   
 </ion-content>
+
+
+</ion-content>
+
+
 </body>

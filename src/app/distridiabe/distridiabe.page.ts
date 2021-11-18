@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-distridiabe',
@@ -7,6 +8,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class DistridiabePage implements OnInit {
 
+
+ 
 items = [];
 
 vet : number;
@@ -22,7 +25,7 @@ glip : number;
 totalk : number;
 totalg : number;
 
-  constructor() { 
+  constructor(public alertCtrl: AlertController) { 
 this.items = Array();
 
 
@@ -31,11 +34,21 @@ this.items = Array();
   ngOnInit() {
   }
 
-
+  async showAlert() { 
+    const alert = await this.alertCtrl.create({ 
+    header: 'Error', 
+    message: 'Ingrese datos correctos', 
+    buttons: ['OK'] 
+    }); 
+    await alert.present(); 
+    const result = await alert.onDidDismiss();  
+    console.log(result); 
+    } 
 
 
 
   calculo(){
+    if(this.vet > 0 && this.phco >0 && this.ppro > 0 && this.plip > 0){
 let khco = (this.vet * this.phco)/100;
 this.khco = parseFloat(khco.toFixed(2));
 let ghco = this.khco / 4;
@@ -57,5 +70,8 @@ this.totalk = parseFloat(totalk.toFixed(2));
 let totalg = ghco + gpro + glip; 
 this.totalg = parseFloat(totalg.toFixed(2));
 
+      }else{
+this.showAlert();
       }
+    }
 }
